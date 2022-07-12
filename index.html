@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>لیست دروس انتخاب واحد</title>
+    <meta name="author" content="Goudarz Jafari">
+    <meta content="لیست دروس منتشر شده برای انتخاب واحد دانشگاه آزاد شیراز">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <main class="row">
+            <div class="col">
+                <h1>لیست دروس انتخاب واحد</h1>
+                <p>دروس ارائه شده تابستان ۱۴۰۲</p>
+                <p> اولویت دیدن دروس در خود آموزشیار می‌باشد، این فایل فقط جنبه کمک در زمانی که دسترسی به آموزشیار راحت نباشد را دارد، اتوماتیک دیتاها گرفته می‌شود (تا ساعت ۱۳:۳۲ - ۲۱ تیر لیست به روز شده)
+                </p>
+                <div id="table-container"></div>
+            </div>
+        </main>
+        <footer class="row">
+            <div class="col">
+                <hr>
+                <p class="text-right">پیاده‌سازی شده توسط 
+                    <a href="https://twitter.com/GoudarzJafari">گودرز جعفری</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.csv.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap4.min.js"></script>
+    <script src="js/csv_to_html_table.js"></script>
+    <script>
+        function format_link(link) {
+            if (link)
+                return "<a href='" + link + "' target='_blank'>" + link + "</a>";
+            else return "";
+        }
+        CsvToHtmlTable.init({
+            csv_path: "data/it-1402.csv",
+            element: "table-container",
+            allow_download: true,
+            csv_options: {
+                separator: ",",
+                delimiter: '"'
+            },
+            datatables_options: {
+                paging: false
+            },
+            custom_formatting: [
+                [4, format_link]
+            ]
+        });
+    </script>
+</body>
+</html>
