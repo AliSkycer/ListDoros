@@ -23,7 +23,7 @@ CsvToHtmlTable = {
         $.when($.get(csv_path)).then(
             function (data) {
                 var csvData = $.csv.toArrays(data, csv_options);
-                var $tableHead = $("<thead></thead>");
+                var $tableHead = $("<thead class='position-sticky bg-white'></thead>");
                 var csvHeaderRow = csvData[0];
                 var $tableHeadRow = $("<tr></tr>");
                 for (var headerIdx = 0; headerIdx < csvHeaderRow.length; headerIdx++) {
