@@ -50,3 +50,32 @@ h2 {
   margin-right: 8px;
   opacity: 0.7;
 }
+.dataTables_wrapper{
+  height: 75vh;
+  overflow: auto;
+}
+thead{
+ top: 0;
+}
+tr:hover{
+  background-color: rgb(174 244 255) !important;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
